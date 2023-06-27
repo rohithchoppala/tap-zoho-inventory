@@ -1,0 +1,210 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "purchaseorder_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "vendor_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "vendor_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "company_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "order_status": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "billed_status": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "received_status": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "status": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "color_code": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "current_sub_status_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "current_sub_status": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "purchaseorder_number": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "reference_number": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "date": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "delivery_date": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "delivery_days": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "due_by_days": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "due_in_days": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "currency_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "currency_code": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "price_precision": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "total": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "has_attachment": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "created_time": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "last_modified_time": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "is_drop_shipment": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "total_ordered_quantity": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "quantity_yet_to_receive": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "quantity_marked_as_received": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "is_po_marked_as_received": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "is_backorder": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "receives": {
+      "type": [
+        "array",
+        "null"
+      ]
+    },
+    "client_viewed_time": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "is_viewed_by_client": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    }
+  }
+}

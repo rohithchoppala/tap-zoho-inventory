@@ -1,0 +1,265 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "item_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "item_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "unit": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "status": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "source": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "is_combo_product": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "is_linked_with_zohocrm": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "zcrm_product_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "description": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "brand": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "manufacturer": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "rate": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "tax_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "tax_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "tax_percentage": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "purchase_account_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "purchase_account_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "account_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "account_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "purchase_description": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "purchase_rate": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "item_type": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "product_type": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "has_attachment": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "is_returnable": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "sku": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "upc": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ean": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "isbn": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "part_number": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "image_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "image_type": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "image_document_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "created_time": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "last_modified_time": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "show_in_storefront": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "length": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "width": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "height": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "weight": {
+      "type": [
+        "null",
+        "number",
+        "string"
+      ]
+    },
+    "weight_unit": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "dimension_unit": {
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "salesorder_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "zcrm_potential_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "zcrm_potential_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "customer_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "customer_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "email": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "delivery_date": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "company_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "color_code": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "current_sub_status_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "current_sub_status": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "pickup_location_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "salesorder_number": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "reference_number": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "date": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "shipment_date": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "shipment_days": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "due_by_days": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "due_in_days": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "currency_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "source": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "currency_code": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "total": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "bcy_total": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "total_invoiced_amount": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "created_time": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "last_modified_time": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "is_emailed": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "quantity": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "quantity_invoiced": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "quantity_packed": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "quantity_shipped": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "order_status": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "invoiced_status": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "paid_status": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "shipped_status": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "status": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "is_drop_shipment": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "is_backorder": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "is_manually_fulfilled": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "sales_channel": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "sales_channel_formatted": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "salesperson_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "has_attachment": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "balance": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "delivery_method": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "delivery_method_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    }
+  }
+}
