@@ -17,21 +17,21 @@ SCHEMAS_DIR = Path(__file__).parent / Path("./schemas")
 class ProductsStream(ZohoInventoryStream):
     """Define custom stream."""
 
-    name = "prodcuts"
+    name = "items"
     path = "/items"
-    records_jsonpath = "$.items[*]"
+    records_jsonpath = "$.item[*]"
 
-    schema_filepath = SCHEMAS_DIR / "items_schema.json"
+    schema_filepath = SCHEMAS_DIR / "items_indv_schema.json"
 
 
 class PurchaseOrders(ZohoInventoryStream):
     """Define custom stream."""
 
-    name = "purchase_order"
+    name = "purchaseorders"
     path = "/purchaseorders"
-    records_jsonpath = "$.purchaseorders[*]"
+    records_jsonpath = "$.purchaseorder[*]"
 
-    schema_filepath = SCHEMAS_DIR / "purchase_orders_schema.json"
+    schema_filepath = SCHEMAS_DIR / "purchaseorders_indv_schema.json"
 
 
 
@@ -40,9 +40,9 @@ class SalesOrdersStream(ZohoInventoryStream):
 
     name = "salesorders"
     path = "/salesorders"
-    records_jsonpath = "$.salesorders[*]"
+    records_jsonpath = "$.salesorder"
 
-    schema_filepath = SCHEMAS_DIR / "salesorders_schema.json"
+    schema_filepath = SCHEMAS_DIR / "salesorders_indv_schema.json"
     # Optionally, you may also use `schema_filepath` in place of `schema`:
     # schema_filepath = SCHEMAS_DIR / "users.json"  # noqa: ERA001
 
@@ -50,8 +50,9 @@ class SalesOrdersStream(ZohoInventoryStream):
 class SuppliersStream(ZohoInventoryStream):
     """Define custom stream."""
 
-    name = "vendors"
-    path = "/vendors"
-    records_jsonpath = "$.contacts[*]"
+    name = "contacts"
     
-    schema_filepath = SCHEMAS_DIR / "contacts_schema.json"
+    path = "/vendors"
+    records_jsonpath = "$.contact"
+    
+    schema_filepath = SCHEMAS_DIR / "contacts_indv_schema.json"

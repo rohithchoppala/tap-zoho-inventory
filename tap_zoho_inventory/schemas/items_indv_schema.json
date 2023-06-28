@@ -1,0 +1,392 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "item_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "sku": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "brand": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "manufacturer": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "category_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "category_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "image_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "image_type": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "status": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "source": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "is_linked_with_zohocrm": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "zcrm_product_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "crm_owner_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "unit": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "unit_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "description": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "rate": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "account_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "account_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "tax_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "tax_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "tax_percentage": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "tax_type": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "is_default_tax_applied": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "associated_template_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "documents": {
+      "type": [
+        "array",
+        "null"
+      ]
+    },
+    "purchase_description": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "pricebook_rate": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "sales_rate": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "purchase_rate": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "purchase_account_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "purchase_account_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "inventory_account_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "inventory_account_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "created_time": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "offline_created_date_with_time": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "last_modified_time": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "tags": {
+      "type": [
+        "array",
+        "null"
+      ]
+    },
+    "item_type": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "product_type": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "is_returnable": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "minimum_order_quantity": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "maximum_order_quantity": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "initial_stock": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "initial_stock_rate": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "vendor_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "vendor_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "custom_fields": {
+      "type": [
+        "array",
+        "null"
+      ]
+    },
+    "custom_field_hash": {
+      "type": "object"
+    },
+    "is_fulfillable": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "upc": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ean": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "isbn": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "part_number": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "is_combo_product": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "sales_channels": {
+      "type": [
+        "array",
+        "null"
+      ]
+    },
+    "preferred_vendors": {
+      "type": [
+        "array",
+        "null"
+      ]
+    },
+    "package_details": {
+      "type": "object",
+      "properties": {
+        "length": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "width": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "height": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "weight": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "weight_unit": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "dimension_unit": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    }
+  }
+}

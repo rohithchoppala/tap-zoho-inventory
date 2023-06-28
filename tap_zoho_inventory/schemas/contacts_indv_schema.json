@@ -1,0 +1,1085 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "contact_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "contact_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "company_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "first_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "last_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "designation": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "department": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "website": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "is_bcy_only_contact": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "is_credit_limit_migration_completed": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "language_code": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "language_code_formatted": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "contact_salutation": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "email": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "phone": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "mobile": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "portal_status": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "is_client_review_asked": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "has_transaction": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "contact_type": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "customer_sub_type": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "owner_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "owner_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "source": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "documents": {
+      "type": [
+        "array",
+        "null"
+      ]
+    },
+    "twitter": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "facebook": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "is_crm_customer": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "is_linked_with_zohocrm": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "primary_contact_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "zcrm_vendor_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "crm_owner_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "payment_terms": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "payment_terms_label": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "credit_limit_exceeded_amount": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "currency_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "currency_code": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "currency_symbol": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "price_precision": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "exchange_rate": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "can_show_customer_ob": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "can_show_vendor_ob": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "opening_balance_amount": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "opening_balance_amount_bcy": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "outstanding_ob_receivable_amount": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "outstanding_ob_payable_amount": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "outstanding_receivable_amount": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "outstanding_receivable_amount_bcy": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "outstanding_payable_amount": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "outstanding_payable_amount_bcy": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "unused_credits_receivable_amount": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "unused_credits_receivable_amount_bcy": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "unused_credits_payable_amount": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "unused_credits_payable_amount_bcy": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "unused_retainer_payments": {
+      "type": [
+        "null",
+        "number"
+      ]
+    },
+    "status": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "payment_reminder_enabled": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "is_sms_enabled": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "is_whatsapp_enabled": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "is_consent_agreed": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "consent_date": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "is_client_review_settings_enabled": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "custom_fields": {
+      "type": [
+        "array",
+        "null"
+      ]
+    },
+    "custom_field_hash": {
+      "type": "object"
+    },
+    "contact_category": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "sales_channel": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ach_supported": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "portal_receipt_count": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "opening_balances": {
+      "type": [
+        "array",
+        "null"
+      ]
+    },
+    "allow_parent_for_payment_and_view": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "entity_address_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "billing_address": {
+      "type": "object",
+      "properties": {
+        "address_id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "attention": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "address": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "street2": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "city": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "state_code": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "state": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "zip": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "country": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "country_code": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "phone": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "fax": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "shipping_address": {
+      "type": "object",
+      "properties": {
+        "address_id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "attention": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "address": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "street2": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "city": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "state_code": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "state": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "zip": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "country": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "country_code": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "phone": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "fax": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "latitude": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "longitude": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "contact_persons": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "contact_person_id": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "salutation": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "first_name": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "last_name": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "email": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "phone": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "mobile": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "mobile_country_code": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "mobile_code_formatted": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "department": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "designation": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "skype": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "fax": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "zcrm_contact_id": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "is_added_in_portal": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "can_invite": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "is_primary_contact": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "is_portal_invitation_accepted": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "is_sms_enabled_for_cp": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "is_whatsapp_enabled_for_cp": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "photo_url": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "communication_preference": {
+                "type": "object",
+                "properties": {
+                  "is_email_enabled": {
+                    "type": [
+                      "boolean",
+                      "null"
+                    ]
+                  },
+                  "is_sms_enabled": {
+                    "type": [
+                      "boolean",
+                      "null"
+                    ]
+                  },
+                  "is_whatsapp_enabled": {
+                    "type": [
+                      "boolean",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "addresses": {
+      "type": [
+        "array",
+        "null"
+      ]
+    },
+    "pricebook_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "pricebook_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "default_templates": {
+      "type": "object",
+      "properties": {
+        "invoice_template_id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "invoice_template_name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "bill_template_id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "bill_template_name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "estimate_template_id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "estimate_template_name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "creditnote_template_id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "creditnote_template_name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "purchaseorder_template_id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "purchaseorder_template_name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "salesorder_template_id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "salesorder_template_name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "paymentthankyou_template_id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "paymentthankyou_template_name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "invoice_email_template_id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "invoice_email_template_name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "estimate_email_template_id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "estimate_email_template_name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "creditnote_email_template_id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "creditnote_email_template_name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "purchaseorder_email_template_id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "purchaseorder_email_template_name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "salesorder_email_template_id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "salesorder_email_template_name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "paymentthankyou_email_template_id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "paymentthankyou_email_template_name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "payment_remittance_email_template_id": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "payment_remittance_email_template_name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        }
+      }
+    },
+    "associated_with_square": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "cards": {
+      "type": [
+        "array",
+        "null"
+      ]
+    },
+    "checks": {
+      "type": [
+        "array",
+        "null"
+      ]
+    },
+    "bank_accounts": {
+      "type": [
+        "array",
+        "null"
+      ]
+    },
+    "vpa_list": {
+      "type": [
+        "array",
+        "null"
+      ]
+    },
+    "notes": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "created_time": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "created_date": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "created_by_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "last_modified_time": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "tags": {
+      "type": [
+        "array",
+        "null"
+      ]
+    },
+    "zohopeople_client_id": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "vendor_currency_summaries": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "currency_id": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "currency_code": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "currency_symbol": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "price_precision": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "is_base_currency": {
+                "type": [
+                  "boolean",
+                  "null"
+                ]
+              },
+              "currency_name_formatted": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "outstanding_payable_amount": {
+                "type": [
+                  "null",
+                  "number"
+                ]
+              },
+              "unused_credits_payable_amount": {
+                "type": [
+                  "null",
+                  "number"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

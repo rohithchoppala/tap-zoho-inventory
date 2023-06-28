@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
-from typing import Any, Callable, Iterable
+from typing import Any, Callable, Iterable, cast
 
 import requests
 from singer_sdk.helpers.jsonpath import extract_jsonpath
@@ -68,6 +68,8 @@ class ZohoInventoryStream(RESTStream):
         headers = {}
         if "user_agent" in self.config:
             headers["User-Agent"] = self.config.get("user_agent")
+        
+        return headers
 
 
     def get_url_params(
@@ -120,7 +122,14 @@ class ZohoInventoryStream(RESTStream):
         Yields:
             Each record from the source.
         """
-        yield from extract_jsonpath(self.records_jsonpath, input=response.json())
+        decorated_request = self.request_decorator(self._request)
+        for record in response.json()[self.name]:
+            id = f"{self.name[:-1]}_id"
+            url = self.url_base + "/" + self.name + f"/{record[id]}"
+            response_obj = decorated_request(self.prepare_request_lines(url,{}), {})
+            record = list(extract_jsonpath(self.records_jsonpath, input=response_obj.json()))[0]
+            yield record
+
 
     def post_process(
         self,
@@ -138,3 +147,22 @@ class ZohoInventoryStream(RESTStream):
         """
         # TODO: Delete this method if not needed.
         return row
+
+    def prepare_request_lines(self, url, params) -> requests.PreparedRequest:
+        http_method = self.rest_method
+        headers = self.http_headers
+        authenticator = self.authenticator
+        if authenticator:
+            headers.update(authenticator.auth_headers or {})
+        request = cast(
+            requests.PreparedRequest,
+            self.requests_session.prepare_request(
+                requests.Request(
+                    method=http_method,
+                    url=url,
+                    params=params,
+                    headers=headers,
+                ),
+            ),
+        )
+        return request
