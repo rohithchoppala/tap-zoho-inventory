@@ -53,4 +53,4 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 # CLI declaration
-tap-zoho-inventory = 'tap_zoho_inventory.tap:TapzohoInventory.cli'
+tap-zoho-inventory = 'tap_zoho_inventory.tap:TapZohoInventory.cli'
