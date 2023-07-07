@@ -145,8 +145,16 @@ class ZohoInventoryStream(RESTStream):
         Returns:
             The updated record dictionary, or ``None`` to skip the record.
         """
-        # TODO: Delete this method if not needed.
+        self.replace_value(row,'',None)
         return row
+
+    def replace_value(self, obj,val,replacement):
+        for key in obj:
+            if type(obj[key]) == dict:
+                self.replace_value(obj[key],val,replacement)
+            else:
+                if obj[key] == val:
+                    obj[key] = replacement
 
     def prepare_request_lines(self, url, params) -> requests.PreparedRequest:
         http_method = self.rest_method
