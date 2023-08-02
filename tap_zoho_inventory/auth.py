@@ -52,5 +52,5 @@ class ZohoInventoryAuthenticator(OAuthAuthenticator, metaclass=SingletonMeta):
         return cls(
             stream=stream,
             auth_endpoint="https://accounts.zoho.com/oauth/v2/token",
-            oauth_scopes="ZohoInventory.items.READ,ZohoInventory.salesorders.READ,ZohoInventory.contacts.READ,ZohoInventory.purchaseorders.READ",
+            oauth_scopes="ZohoInventory.salesorders.READ,ZohoInventory.contacts.READ,ZohoInventory.items.READ,ZohoInventory.purchaseorders.READ",
         )

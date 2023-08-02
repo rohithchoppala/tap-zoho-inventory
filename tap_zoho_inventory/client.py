@@ -36,7 +36,10 @@ class ZohoInventoryStream(RESTStream):
     next_page_token_jsonpath = "$.page_context.page"  # noqa: S105
 
     def get_next_page_token(self, response, previous_token: Any | None) -> Any | None:
-        more_pages = response.json()['page_context']['has_more_page']
+        try:
+            more_pages = response.json()['page_context']['has_more_page']
+        except KeyError:
+            return None
         
         if self.next_page_token_jsonpath and more_pages:
             all_matches = extract_jsonpath(
