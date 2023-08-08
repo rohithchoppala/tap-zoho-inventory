@@ -90,6 +90,8 @@ class ZohoInventoryStream(RESTStream):
             A dictionary of URL query parameters.
         """
         params: dict = {}
+        if self.config.get('organization_id'):
+            params['organization_id'] = self.config.get('organization_id')
         if next_page_token:
             params["page"] = next_page_token
         if self.replication_key:
