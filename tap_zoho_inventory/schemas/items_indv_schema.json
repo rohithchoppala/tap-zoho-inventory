@@ -269,13 +269,15 @@
     "initial_stock": {
       "type": [
         "null",
-        "string"
+        "string",
+        "number"
       ]
     },
     "initial_stock_rate": {
       "type": [
         "null",
-        "string"
+        "string",
+        "number"
       ]
     },
     "vendor_id": {
