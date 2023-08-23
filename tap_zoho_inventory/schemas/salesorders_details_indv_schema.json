@@ -630,7 +630,8 @@
               "discount": {
                 "type": [
                   "null",
-                  "number"
+                  "number",
+                  "string"
                 ]
               },
               "discounts": {
@@ -1109,8 +1110,9 @@
     },
     "payment_terms": {
       "type": [
-        "integer",
-        "null"
+        "number",
+        "null",
+        "string"
       ]
     },
     "payment_terms_label": {
@@ -1239,7 +1241,8 @@
     "discount": {
       "type": [
         "null",
-        "number"
+        "number",
+        "string"
       ]
     },
     "discount_applied_on_amount": {
