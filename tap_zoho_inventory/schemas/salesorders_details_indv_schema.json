@@ -1151,6 +1151,50 @@
         "array",
         "null"
       ]
+    },
+    "discount_amount": {
+      "type": [
+        "null",
+        "string",
+        "number"
+      ]
+    },
+    "is_backorder_allowed": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "pricebook_id": {
+      "type": [
+        "null",
+        "string",
+        "number"
+      ]
+    },
+    "is_pre_gst": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "gst_no": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "gst_treatment": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "place_of_supply": {
+      "type": [
+        "null",
+        "string"
+      ]
     }
   }
 }

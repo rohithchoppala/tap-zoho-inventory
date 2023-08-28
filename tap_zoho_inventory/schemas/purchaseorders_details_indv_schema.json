@@ -442,7 +442,7 @@
       "type": [
         "null",
         "string",
-		    "number"
+        "number"
       ]
     },
     "payment_terms_label": {
@@ -649,6 +649,55 @@
       "type": [
         "array",
         "null"
+      ]
+    },
+    "pricebook_id": {
+      "type": [
+        "null",
+        "string",
+        "number"
+      ]
+    },
+    "delivery_customer_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "gst_treatment": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "gst_no": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "source_of_supply": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "destination_of_supply": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "is_pre_gst": {
+      "type": [
+        "null",
+        "boolean"
+      ]
+    },
+    "is_reverse_charge_applied": {
+      "type": [
+        "null",
+        "boolean"
       ]
     }
   }
