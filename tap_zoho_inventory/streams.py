@@ -25,7 +25,7 @@ class ProductsStream(ZohoInventoryStream):
     name = "items"
     path = "/items"
     records_jsonpath = "$.item[*]"
-
+    replication_key = "last_modified_time"
     schema_filepath = SCHEMAS_DIR / "items_indv_schema.json"
 
     def get_child_context(self, record, context):
@@ -77,6 +77,7 @@ class SuppliersStream(ZohoInventoryStream):
     path = "/vendors"
     records_jsonpath = "$.contact[*]"
     schema_filepath = SCHEMAS_DIR / "contacts_indv_schema.json"
+    replication_key = "last_modified_time"
 
 
 class SalesOrderDetailsStream(ZohoInventoryStream):
