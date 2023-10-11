@@ -228,7 +228,8 @@
       "type": [
         "null",
         "string"
-      ]
+      ],
+      "format": "date-time"
     },
     "tags": {
       "type": [
@@ -383,6 +384,90 @@
           ]
         },
         "dimension_unit": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "group_id": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "group_name": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "is_taxable": {
+          "type": [
+            "null",
+            "boolean"
+          ]
+        },
+        "attribute_id1": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "attribute_name1": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "reorder_level": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "stock_on_hand": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "available_stock": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "actual_available_stock": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "attribute_option_id1": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "attribute_option_name1": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "hsn_or_sac": {
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "sat_item_key_code": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "unitkey_code": {
           "type": [
             "null",
             "string"

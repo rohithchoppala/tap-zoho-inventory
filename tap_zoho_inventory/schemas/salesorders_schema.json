@@ -162,7 +162,8 @@
       "type": [
         "null",
         "string"
-      ]
+      ],
+      "format": "date-time"
     },
     "is_emailed": {
       "type": [

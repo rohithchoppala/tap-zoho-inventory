@@ -1004,7 +1004,8 @@
       "type": [
         "null",
         "string"
-      ]
+      ],
+      "format": "date-time"
     },
     "tags": {
       "type": [

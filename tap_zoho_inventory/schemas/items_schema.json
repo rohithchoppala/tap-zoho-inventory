@@ -216,7 +216,8 @@
       "type": [
         "null",
         "string"
-      ]
+      ],
+      "format": "date-time"
     },
     "show_in_storefront": {
       "type": [

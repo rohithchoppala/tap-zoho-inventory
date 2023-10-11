@@ -192,7 +192,8 @@
       "type": [
         "null",
         "string"
-      ]
+      ],
+      "format": "date-time"
     },
     "last_modified_time_formatted": {
       "type": [

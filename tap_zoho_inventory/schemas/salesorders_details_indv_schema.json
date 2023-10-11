@@ -771,7 +771,8 @@
       "type": [
         "null",
         "string"
-      ]
+      ],
+      "format": "date-time"
     },
     "created_by_id": {
       "type": [

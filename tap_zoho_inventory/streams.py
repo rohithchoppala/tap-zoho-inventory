@@ -40,6 +40,7 @@ class PurchaseOrders(ZohoInventoryStream):
 
     name = "purchaseorders"
     path = "/purchaseorders"
+    replication_key = "last_modified_time"
     records_jsonpath = "$.purchaseorder[*]"
 
     schema_filepath = SCHEMAS_DIR / "purchaseorders_indv_schema.json"
@@ -57,6 +58,7 @@ class SalesOrdersStream(ZohoInventoryStream):
     name = "salesorders"
     path = "/salesorders"
     records_jsonpath = "$.salesorder"
+    replication_key = "last_modified_time"
 
     schema_filepath = SCHEMAS_DIR / "salesorders_indv_schema.json"
     # Optionally, you may also use `schema_filepath` in place of `schema`:

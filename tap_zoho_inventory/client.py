@@ -10,7 +10,7 @@ import requests
 from singer_sdk.helpers.jsonpath import extract_jsonpath
 from singer_sdk.pagination import BaseAPIPaginator  # noqa: TCH002
 from singer_sdk.streams import RESTStream
-
+from pendulum import parse
 from tap_zoho_inventory.auth import ZohoInventoryAuthenticator
 
 if sys.version_info >= (3, 8):
@@ -74,6 +74,12 @@ class ZohoInventoryStream(RESTStream):
         
         return headers
 
+    def get_starting_time(self, context):
+        start_date = self.config.get("start_date")
+        if start_date:
+            start_date = parse(self.config.get("start_date"))
+        rep_key = self.get_starting_timestamp(context)
+        return rep_key or start_date
 
     def get_url_params(
         self,
@@ -97,6 +103,9 @@ class ZohoInventoryStream(RESTStream):
         if self.replication_key:
             params["sort"] = "asc"
             params["order_by"] = self.replication_key
+            start_date = self.get_starting_time(context).strftime('%Y-%m-%dT%H:%M:%S%z')
+            if start_date:
+                params[self.replication_key] = start_date
         return params
 
     def prepare_request_payload(

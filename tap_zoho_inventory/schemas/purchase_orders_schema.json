@@ -150,7 +150,8 @@
       "type": [
         "null",
         "string"
-      ]
+      ],
+      "format": "date-time"
     },
     "is_drop_shipment": {
       "type": [

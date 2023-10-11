@@ -619,7 +619,8 @@
       "type": [
         "null",
         "string"
-      ]
+      ],
+      "format": "date-time"
     },
     "can_mark_as_bill": {
       "type": [
