@@ -22,7 +22,7 @@ SCHEMAS_DIR = Path(__file__).parent / Path("./schemas")
 class ProductsStream(ZohoInventoryStream):
     """Define custom stream."""
 
-    name = "items"
+    name = "products"
     path = "/items"
     records_jsonpath = "$.item[*]"
     replication_key = "last_modified_time"
@@ -38,7 +38,7 @@ class ProductsStream(ZohoInventoryStream):
 class PurchaseOrders(ZohoInventoryStream):
     """Define custom stream."""
 
-    name = "purchaseorders"
+    name = "purchase_orders"
     path = "/purchaseorders"
     replication_key = "last_modified_time"
     records_jsonpath = "$.purchaseorder[*]"
@@ -55,7 +55,7 @@ class PurchaseOrders(ZohoInventoryStream):
 class SalesOrdersStream(ZohoInventoryStream):
     """Define custom stream."""
 
-    name = "salesorders"
+    name = "sales_orders"
     path = "/salesorders"
     records_jsonpath = "$.salesorder"
     replication_key = "last_modified_time"
@@ -81,7 +81,7 @@ class SuppliersStream(ZohoInventoryStream):
 
 
 class SalesOrderDetailsStream(ZohoInventoryStream):
-    name = "salesorder"
+    name = "sales_orders_details"
     path = "/salesorders/{salesorder_id}"
     parent_stream_type = SalesOrdersStream
     records_jsonpath = "$.salesorder[*]"
@@ -92,7 +92,7 @@ class SalesOrderDetailsStream(ZohoInventoryStream):
 
 
 class PurchaseOrderDetailStream(ZohoInventoryStream):
-    name = "purchaseorder"
+    name = "purchase_orders_details"
     path = "/purchaseorders/{purchaseorder_id}"
     parent_stream_type = PurchaseOrders
     records_jsonpath = "$.purchaseorder[*]"
@@ -103,7 +103,7 @@ class PurchaseOrderDetailStream(ZohoInventoryStream):
 
 
 class ProductDetailsStream(ZohoInventoryStream):
-    name = "product"
+    name = "product_details"
     path = "/items/{item_id}"
     parent_stream_type = ProductsStream
     records_jsonpath = "$.item[*]"
