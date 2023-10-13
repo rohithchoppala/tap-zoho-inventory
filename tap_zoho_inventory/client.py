@@ -40,17 +40,17 @@ class ZohoInventoryStream(RESTStream):
             more_pages = response.json()['page_context']['has_more_page']
         except KeyError:
             return None
-        
+
         if self.next_page_token_jsonpath and more_pages:
             all_matches = extract_jsonpath(
                 self.next_page_token_jsonpath, response.json()
             )
             first_match = next(iter(all_matches), None)
-            next_page_token = first_match 
+            next_page_token = first_match
             return next_page_token + 1
-        
+
         return None
- 
+
 
     @cached_property
     def authenticator(self) -> _Auth:
@@ -71,7 +71,7 @@ class ZohoInventoryStream(RESTStream):
         headers = {}
         if "user_agent" in self.config:
             headers["User-Agent"] = self.config.get("user_agent")
-        
+
         return headers
 
     def get_starting_time(self, context):
@@ -137,9 +137,11 @@ class ZohoInventoryStream(RESTStream):
             Each record from the source.
         """
         decorated_request = self.request_decorator(self._request)
-        for record in response.json()[self.name]:
-            id = f"{self.name[:-1]}_id"
-            url = self.url_base + "/" + self.name + f"/{record[id]}"
+        res = response.json()
+        lookup_name = res['page_context']['report_name'].lower().replace(' ', '')
+        id_field = [x for x in res[lookup_name][0].keys() if x.endswith('_id')][0]
+        for record in response.json()[lookup_name]:
+            url = self.url_base + "/" + lookup_name + f"/{record[id_field]}"
             response_obj = decorated_request(self.prepare_request_lines(url,{}), {})
             record = list(extract_jsonpath(self.records_jsonpath, input=response_obj.json()))[0]
             yield record
