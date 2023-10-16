@@ -139,7 +139,15 @@ class ZohoInventoryStream(RESTStream):
         decorated_request = self.request_decorator(self._request)
         res = response.json()
         lookup_name = res['page_context']['report_name'].lower().replace(' ', '')
-        id_field = [x for x in res[lookup_name][0].keys() if x.endswith('_id')][0]
+        try:
+            id_field = [x for x in res[lookup_name][0].keys() if x.endswith('_id')][0]
+        except IndexError:
+            self.logger.info(f'No id field found for {lookup_name}')
+            self.logger.info(f"Got response: {res}")
+            id_field = lookup_name if not lookup_name.endswith('s') else lookup_name[:-1]
+            id_field = f'{id_field}_id'
+            self.logger.info(f"Using {id_field} as id field")
+
         for record in response.json()[lookup_name]:
             url = self.url_base + "/" + lookup_name + f"/{record[id_field]}"
             response_obj = decorated_request(self.prepare_request_lines(url,{}), {})
