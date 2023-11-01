@@ -13,6 +13,8 @@ from singer_sdk.streams import RESTStream
 from pendulum import parse
 from tap_zoho_inventory.auth import ZohoInventoryAuthenticator
 
+from datetime import timedelta
+
 if sys.version_info >= (3, 8):
     from functools import cached_property
 else:
@@ -103,9 +105,10 @@ class ZohoInventoryStream(RESTStream):
         if self.replication_key:
             params["sort"] = "asc"
             params["order_by"] = self.replication_key
-            start_date = self.get_starting_time(context).strftime('%Y-%m-%dT%H:%M:%S%z')
+            start_date = self.get_starting_time(context)
+            start_date = start_date + timedelta(seconds=1)
             if start_date:
-                params[self.replication_key] = start_date
+                params[self.replication_key] = start_date.strftime('%Y-%m-%dT%H:%M:%S%z')
         return params
 
     def prepare_request_payload(
