@@ -29,10 +29,13 @@ class ZohoInventoryStream(RESTStream):
 
     @property
     def url_base(self) -> str:
-        """Return the API URL root, configurable via tap settings."""
-        # TODO: hardcode a value here, or retrieve it from self.config
-        return "https://inventory.zoho.com/api/v1"
-         # Or override `parse_response`.
+        """Return the API URL root, configurable via tap settings."""        
+        account_server = self.config.get(
+            "accounts-server", "https://accounts.zoho.com"
+        )
+        account_server = account_server.replace("accounts.", "inventor.")
+        return f"{account_server}/api/v1"
+
 
     # Set this value or override `get_new_paginator`.
     next_page_token_jsonpath = "$.page_context.page"  # noqa: S105
