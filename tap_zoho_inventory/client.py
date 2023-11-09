@@ -61,7 +61,11 @@ class ZohoInventoryStream(RESTStream):
         Returns:
             An authenticator instance.
         """
-        return ZohoInventoryAuthenticator.create_for_stream(self)
+        account_server = self.config.get(
+            "accounts-server", "https://accounts.zoho.com"
+        )
+        auth_endpoint = f"{account_server}/oauth/v2/token"
+        return ZohoInventoryAuthenticator.create_for_stream(self, auth_endpoint=auth_endpoint)
 
     @property
     def http_headers(self) -> dict:

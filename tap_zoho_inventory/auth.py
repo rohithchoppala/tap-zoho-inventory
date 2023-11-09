@@ -32,15 +32,15 @@ class ZohoInventoryAuthenticator(OAuthAuthenticator, metaclass=SingletonMeta):
     def auth_headers(self) -> dict:
         if not self.is_token_valid():
             self.update_access_token()
-            
+
         result = super().auth_headers
         result["Authorization"] = f"Zoho-oauthtoken {self.access_token}"
 
         return result
-       
+
 
     @classmethod
-    def create_for_stream(cls, stream) -> ZohoInventoryAuthenticator:  # noqa: ANN001
+    def create_for_stream(cls, stream, auth_endpoint) -> ZohoInventoryAuthenticator:  # noqa: ANN001
         """Instantiate an authenticator for a specific Singer stream.
 
         Args:
@@ -49,10 +49,6 @@ class ZohoInventoryAuthenticator(OAuthAuthenticator, metaclass=SingletonMeta):
         Returns:
             A new authenticator.
         """
-        account_server = self.config.get(
-            "accounts-server", "https://accounts.zoho.com"
-        )
-        auth_endpoint = f"{account_server}/oauth/v2/token"
         return cls(
             stream=stream,
             auth_endpoint=auth_endpoint,
