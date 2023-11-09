@@ -33,7 +33,7 @@ class ZohoInventoryStream(RESTStream):
         account_server = self.config.get(
             "accounts-server", "https://accounts.zoho.com"
         )
-        account_server = account_server.replace("accounts.", "inventor.")
+        account_server = account_server.replace("accounts.", "inventory.")
         return f"{account_server}/api/v1"
 
 
