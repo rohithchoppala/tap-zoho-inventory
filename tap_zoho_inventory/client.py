@@ -29,7 +29,7 @@ class ZohoInventoryStream(RESTStream):
 
     @property
     def url_base(self) -> str:
-        """Return the API URL root, configurable via tap settings."""        
+        """Return the API URL root, configurable via tap settings."""
         account_server = self.config.get(
             "accounts-server", "https://accounts.zoho.com"
         )
@@ -157,6 +157,13 @@ class ZohoInventoryStream(RESTStream):
             id_field = lookup_name if not lookup_name.endswith('s') else lookup_name[:-1]
             id_field = f'{id_field}_id'
             self.logger.info(f"Using {id_field} as id field")
+        except KeyError:
+            self.logger.info(f"Could not find {lookup_name} in response, falling back on url part")
+            for key, value in response.json().items():
+                if isinstance(value, list):
+                    lookup_name = key
+                    id_field = [x for x in value[0].keys() if x.endswith('_id')][0]
+                    break
 
         for record in response.json()[lookup_name]:
             url = self.url_base + "/" + lookup_name + f"/{record[id_field]}"
