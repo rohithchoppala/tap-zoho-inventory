@@ -3,10 +3,12 @@
 from __future__ import annotations
 
 import sys
+import backoff
+import requests
+
 from pathlib import Path
 from typing import Any, Callable, Iterable, cast
-
-import requests
+from time import sleep
 from singer_sdk.helpers.jsonpath import extract_jsonpath
 from singer_sdk.pagination import BaseAPIPaginator  # noqa: TCH002
 from singer_sdk.streams import RESTStream
@@ -36,7 +38,6 @@ class ZohoInventoryStream(RESTStream):
         account_server = account_server.replace("accounts.", "inventory.")
         return f"{account_server}/api/v1"
 
-
     # Set this value or override `get_new_paginator`.
     next_page_token_jsonpath = "$.page_context.page"  # noqa: S105
 
@@ -56,6 +57,8 @@ class ZohoInventoryStream(RESTStream):
 
         return None
 
+    def backoff_wait_generator(self):
+        return backoff.expo(base=3, factor=6)
 
     @cached_property
     def authenticator(self) -> _Auth:
@@ -215,3 +218,7 @@ class ZohoInventoryStream(RESTStream):
             ),
         )
         return request
+
+    def validate_response(self, response):
+        sleep(1.01)
+        return super().validate_response(response)
