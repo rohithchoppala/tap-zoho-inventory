@@ -3,19 +3,18 @@
 from __future__ import annotations
 
 import sys
-import backoff
 import requests
-
-from pathlib import Path
-from typing import Any, Callable, Iterable, cast
+from datetime import timedelta
 from time import sleep
+from pathlib import Path
+from pendulum import parse
+from typing import Any, Callable, Iterable, cast
+
 from singer_sdk.helpers.jsonpath import extract_jsonpath
 from singer_sdk.pagination import BaseAPIPaginator  # noqa: TCH002
 from singer_sdk.streams import RESTStream
-from pendulum import parse
 from tap_zoho_inventory.auth import ZohoInventoryAuthenticator
 
-from datetime import timedelta
 
 if sys.version_info >= (3, 8):
     from functools import cached_property
@@ -168,11 +167,15 @@ class ZohoInventoryStream(RESTStream):
                     id_field = [x for x in value[0].keys() if x.endswith('_id')][0]
                     break
 
-        for record in response.json()[lookup_name]:
-            url = self.url_base + "/" + lookup_name + f"/{record[id_field]}"
-            response_obj = decorated_request(self.prepare_request_lines(url,{}), {})
-            record = list(extract_jsonpath(self.records_jsonpath, input=response_obj.json()))[0]
-            yield record
+        if getattr(self, "has_lines", True):
+            for record in response.json()[lookup_name]:
+                sleep(1)
+                url = self.url_base + "/" + lookup_name + f"/{record[id_field]}"
+                response_obj = decorated_request(self.prepare_request_lines(url,{}), {})
+                record = list(extract_jsonpath(self.records_jsonpath, input=response_obj.json()))[0]
+                yield record
+        else:
+            yield from extract_jsonpath(self.records_jsonpath, input=response.json())
 
 
     def post_process(

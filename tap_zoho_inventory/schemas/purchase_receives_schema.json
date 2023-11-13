@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+      "receive_date": {
+          "type": [
+              "null",
+              "string"
+          ]
+      },
+      "status": {
+          "type": [
+              "null",
+              "string"
+          ]
+      },
+      "vendor_id": {
+          "type": [
+              "null",
+              "string"
+          ]
+      },
+      "vendor_name": {
+          "type": [
+              "null",
+              "string"
+          ]
+      },
+      "purchasereceive_id": {
+          "type": [
+              "null",
+              "string"
+          ]
+      },
+      "purchasereceive_number": {
+          "type": [
+              "null",
+              "string"
+          ]
+      },
+      "purchaseorder_id": {
+          "type": [
+              "null",
+              "string"
+          ]
+      },
+      "purchaseorder_number": {
+          "type": [
+              "null",
+              "string"
+          ]
+      },
+      "is_salesreturn": {
+          "type": [
+              "boolean",
+              "null"
+          ]
+      },
+      "quantity_received": {
+          "type": [
+              "null",
+              "number"
+          ]
+      },
+      "created_time": {
+          "type": [
+              "null",
+              "string"
+          ]
+      },
+      "last_modified_time": {
+          "type": [
+              "null",
+              "string"
+          ],
+          "format": "date-time"
+      }
+  }
+}

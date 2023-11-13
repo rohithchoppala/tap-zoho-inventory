@@ -50,7 +50,7 @@ class TapZohoInventory(Tap):
             A list of discovered streams.
         """
         return [
-           cls(self) for name, cls in inspect.getmembers(streams,inspect.isclass) if cls.__module__ == 'tap_zoho_inventory.streams'
+           cls(self) for name, cls in inspect.getmembers(streams, inspect.isclass) if cls.__module__ == 'tap_zoho_inventory.streams'
         ]
 
 

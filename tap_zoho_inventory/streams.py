@@ -13,14 +13,9 @@ from singer_sdk import typing as th  # JSON Schema typing helpers
 from singer_sdk.helpers.jsonpath import extract_jsonpath
 
 
-# TODO: Delete this is if not using json files for schema definition
 SCHEMAS_DIR = Path(__file__).parent / Path("./schemas")
-# TODO: - Override `UsersStream` and `GroupsStream` with your own stream definition.
-#       - Copy-paste as many times as needed to create multiple stream types.
-
 
 class ProductsStream(ZohoInventoryStream):
-    """Define custom stream."""
 
     name = "products"
     path = "/items"
@@ -36,7 +31,6 @@ class ProductsStream(ZohoInventoryStream):
 
 
 class PurchaseOrders(ZohoInventoryStream):
-    """Define custom stream."""
 
     name = "purchase_orders"
     path = "/purchaseorders"
@@ -53,7 +47,6 @@ class PurchaseOrders(ZohoInventoryStream):
 
 
 class SalesOrdersStream(ZohoInventoryStream):
-    """Define custom stream."""
 
     name = "sales_orders"
     path = "/salesorders"
@@ -72,7 +65,6 @@ class SalesOrdersStream(ZohoInventoryStream):
 
 
 class SuppliersStream(ZohoInventoryStream):
-    """Define custom stream."""
     name = "contacts"
     path = "/vendors"
     records_jsonpath = "$.contact[*]"
@@ -112,3 +104,11 @@ class ProductDetailsStream(ZohoInventoryStream):
     def parse_response(self, response):
         yield from extract_jsonpath(self.records_jsonpath, input=response.json())
 
+
+class PurchaseReceivesStream(ZohoInventoryStream):
+    name = "purchase_receives"
+    path = "/purchasereceives"
+    records_jsonpath = "$.purchasereceives[*]"
+    schema_filepath = SCHEMAS_DIR / "purchase_receives_schema.json"
+    replication_key = "last_modified_time"
+    has_lines = False
