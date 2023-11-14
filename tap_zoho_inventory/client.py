@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import sys
 import requests
+import backoff
 from datetime import timedelta
 from time import sleep
 from pathlib import Path
@@ -171,9 +172,13 @@ class ZohoInventoryStream(RESTStream):
             for record in response.json()[lookup_name]:
                 sleep(1)
                 url = self.url_base + "/" + lookup_name + f"/{record[id_field]}"
-                response_obj = decorated_request(self.prepare_request_lines(url,{}), {})
-                record = list(extract_jsonpath(self.records_jsonpath, input=response_obj.json()))[0]
-                yield record
+                try:
+                    response_obj = decorated_request(self.prepare_request_lines(url,{}), {})
+                    detailed_record = list(extract_jsonpath(self.records_jsonpath, input=response_obj.json()))[0]
+                    yield detailed_record
+                except:
+                    self.logger.info(f"Could not get lines for {self.name} with ID {record[id_field]}")
+                    yield record
         else:
             yield from extract_jsonpath(self.records_jsonpath, input=response.json())
 
