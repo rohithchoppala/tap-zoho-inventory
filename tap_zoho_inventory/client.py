@@ -171,8 +171,8 @@ class ZohoInventoryStream(RESTStream):
         if getattr(self, "has_lines", True):
             for record in response.json()[lookup_name]:
                 sleep(1)
-                url = self.url_base + "/" + lookup_name + f"/{record[id_field]}"
                 try:
+                    url = self.url_base + "/" + lookup_name + f"/{record[id_field]}"
                     response_obj = decorated_request(self.prepare_request_lines(url,{}), {})
                     detailed_record = list(extract_jsonpath(self.records_jsonpath, input=response_obj.json()))[0]
                     yield detailed_record
