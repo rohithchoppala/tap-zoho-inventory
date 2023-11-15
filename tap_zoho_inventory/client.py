@@ -177,7 +177,7 @@ class ZohoInventoryStream(RESTStream):
                     detailed_record = list(extract_jsonpath(self.records_jsonpath, input=response_obj.json()))[0]
                     yield detailed_record
                 except:
-                    self.logger.info(f"Could not get lines for {self.name} with ID {record[id_field]}")
+                    self.logger.info(f"Could not get lines for {self.name} with record {record}")
                     yield record
         else:
             yield from extract_jsonpath(self.records_jsonpath, input=response.json())
