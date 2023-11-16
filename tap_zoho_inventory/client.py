@@ -165,10 +165,14 @@ class ZohoInventoryStream(RESTStream):
             for key, value in response.json().items():
                 if isinstance(value, list):
                     lookup_name = key
-                    id_field = [x for x in value[0].keys() if x.endswith('_id')][0]
+                    try:
+                        id_field = [x for x in value[0].keys() if x.endswith('_id')][0]
+                    except:
+                        self.logger.info("Could not find id field in response, ignoring details")
+                        id_field = None
                     break
 
-        if getattr(self, "has_lines", True):
+        if getattr(self, "has_lines", True) and id_field:
             for record in response.json()[lookup_name]:
                 sleep(1)
                 try:
