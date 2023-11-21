@@ -1,0 +1,403 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties": {
+        "contact_category": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "submitted_date": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "submitted_by": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "submitted_by_name": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "submitted_by_email": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "submitted_by_photo_url": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "submitter_id": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "approver_id": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "approval_reason": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "approvers_list": {
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "currency_id": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "currency_code": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "currency_symbol": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "purchaseorder_id": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "purchaseorder_number": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "is_inclusive_tax": {
+            "type": [
+                "boolean",
+                "null"
+            ]
+        },
+        "receive_id": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "receive_number": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "status": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "date": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "vendor_id": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "vendor_name": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "contact_persons": {
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "total_quantity_received": {
+            "type": [
+                "null",
+                "number"
+            ]
+        },
+        "is_billed": {
+            "type": [
+                "boolean",
+                "null"
+            ]
+        },
+        "is_po_marked_as_received": {
+            "type": [
+                "boolean",
+                "null"
+            ]
+        },
+        "payment_terms": {
+            "type": [
+                "number",
+                "null",
+                "string"
+            ]
+        },
+        "payment_terms_label": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "bills": {
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "notes": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "line_items": {
+            "anyOf": [
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array"
+                }
+            ]
+        },
+        "billing_address": {
+            "type": "object",
+            "properties": {
+                "address": {
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "street2": {
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "city": {
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "state": {
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "zip": {
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "country": {
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "fax": {
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "phone": {
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "attention": {
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                }
+            }
+        },
+        "shipping_address": {
+            "type": "object",
+            "properties": {
+                "address": {
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "street2": {
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "city": {
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "state": {
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "zip": {
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "country": {
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "fax": {
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "phone": {
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "attention": {
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                }
+            }
+        },
+        "is_tracking_supported": {
+            "type": [
+                "boolean",
+                "null"
+            ]
+        },
+        "tracking_number": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "tracking_link": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "expected_delivery_date": {
+            "type": [
+                "null",
+                "string"
+            ],
+            "format": "date-time"
+        },
+        "shipment_delivered_date": {
+            "type": [
+                "null",
+                "string"
+            ],
+            "format": "date-time"
+        },
+        "carrier": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "delivery_method": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "delivery_method_id": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "is_tracking_enabled": {
+            "type": [
+                "boolean",
+                "null"
+            ]
+        },
+        "tracking_statuses": {
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "created_time": {
+            "type": [
+                "null",
+                "string"
+            ],
+            "format": "date-time"
+        },
+        "last_modified_time": {
+            "type": [
+                "null",
+                "string"
+            ],
+            "format": "date-time"
+        },
+        "created_by_id": {
+            "type": [
+                "null",
+                "string"
+            ]
+        },
+        "last_modified_by_id": {
+            "type": [
+                "null",
+                "string"
+            ]
+        }
+    }
+}
