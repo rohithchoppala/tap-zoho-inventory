@@ -435,6 +435,34 @@
             "number"
           ]
         },
+        "committed_stock": {
+          "type": [
+            "null",
+            "string",
+            "number"
+          ]
+        },
+        "actual_committed_stock": {
+          "type": [
+            "null",
+            "string",
+            "number"
+          ]
+        },
+        "available_for_sale_stock": {
+          "type": [
+            "null",
+            "string",
+            "number"
+          ]
+        },
+        "actual_available_for_sale_stock": {
+          "type": [
+            "null",
+            "string",
+            "number"
+          ]
+        },
         "attribute_option_id1": {
           "type": [
             "null",
