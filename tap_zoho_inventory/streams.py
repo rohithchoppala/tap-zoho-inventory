@@ -3,13 +3,10 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Any, Iterable
 
-import requests
-
+from pendulum import parse
 from tap_zoho_inventory.client import ZohoInventoryStream
 
-from singer_sdk import typing as th  # JSON Schema typing helpers
 from singer_sdk.helpers.jsonpath import extract_jsonpath
 
 
@@ -98,7 +95,7 @@ class ProductDetailsStream(ZohoInventoryStream):
     name = "product_details"
     path = "/items/{item_id}"
     parent_stream_type = ProductsStream
-    records_jsonpath = "$.product[*]"
+    records_jsonpath = "$.item[*]"
     schema_filepath = SCHEMAS_DIR / "product_details_indv_schema.json"
 
     def parse_response(self, response):
@@ -112,6 +109,13 @@ class PurchaseReceivesStream(ZohoInventoryStream):
     schema_filepath = SCHEMAS_DIR / "purchase_receives_schema.json"
     replication_key = "last_modified_time"
     has_lines = False
+
+    def post_process(self, row, context):
+        row_last_mod_time = parse(row["last_modified_time"])
+        if row_last_mod_time > self.get_starting_time(context):
+            return super().post_process(row, context)
+
+        return None
 
     def get_child_context(self, record, context):
         """Return a child context object for a given record."""
