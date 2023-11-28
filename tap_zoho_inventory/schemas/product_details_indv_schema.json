@@ -344,6 +344,12 @@
         "null"
       ]
     },
+    "warehouses": {
+      "type": [
+        "array",
+        "null"
+      ]
+    },
     "preferred_vendors": {
       "type": [
         "array",
