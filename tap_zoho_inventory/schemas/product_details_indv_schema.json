@@ -502,6 +502,13 @@
         "number"
       ]
     },
+    "actual_available_for_sale_stock": {
+      "type": [
+        "null",
+        "string",
+        "number"
+      ]
+    },
     "available_for_sale_stock": {
       "type": [
         "null",
