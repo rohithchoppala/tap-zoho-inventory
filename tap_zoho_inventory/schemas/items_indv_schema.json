@@ -411,7 +411,8 @@
         "attribute_id1": {
           "type": [
             "null",
-            "number"
+            "number",
+            "string"
           ]
         },
         "attribute_name1": {
@@ -499,7 +500,8 @@
     "attribute_id1": {
       "type": [
         "null",
-        "number"
+        "number",
+        "string"
       ]
     },
     "attribute_name1": {
