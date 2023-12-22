@@ -459,7 +459,8 @@
         "hsn_or_sac": {
           "type": [
             "null",
-            "number"
+            "number",
+            "string"
           ]
         },
         "sat_item_key_code": {
@@ -546,7 +547,8 @@
     "hsn_or_sac": {
       "type": [
         "null",
-        "number"
+        "number",
+        "string"
       ]
     },
     "sat_item_key_code": {
