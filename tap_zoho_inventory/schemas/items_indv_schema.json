@@ -448,7 +448,8 @@
         "attribute_option_id1": {
           "type": [
             "null",
-            "number"
+            "number",
+            "string"
           ]
         },
         "attribute_option_name1": {
@@ -537,7 +538,8 @@
     "attribute_option_id1": {
       "type": [
         "null",
-        "number"
+        "number",
+        "string"
       ]
     },
     "attribute_option_name1": {
