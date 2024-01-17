@@ -28,6 +28,26 @@ SCHEMAS_DIR = Path(__file__).parent / Path("./schemas")
 
 class ZohoInventoryStream(RESTStream):
     """ZohoInventory stream class."""
+    custom_fields_list = []
+
+    def _get_custom_fields(self):
+        # Gets all of the custom fields from the account preferences
+        url = self.url_base + "/settings/preferences/"
+        response = self._request(self.prepare_request_lines(url=url), context={})
+        if response.status_code == 401:
+            return {}
+        custom_fields = response.json()["customfields"]
+        return custom_fields
+
+    def __init__(self, tap, name=None, schema=None, path=None):
+        super().__init__(tap, name, schema, path)
+        if getattr(self, "custom_fields_key", None):
+            custom_fields = self._get_custom_fields()
+            for c_f in custom_fields.get(self.custom_fields_key, []):
+                self.custom_fields_list.append(c_f["api_name"])
+                self.schema["properties"][c_f["api_name"]] = {"type": ["object", "null"]}
+
+            self._schema = self.schema
 
     @property
     def url_base(self) -> str:
@@ -140,6 +160,21 @@ class ZohoInventoryStream(RESTStream):
         # TODO: Delete this method if no payload is required. (Most REST APIs.)
         return None
 
+    def move_custom_fields_to_root(self, record):
+        """
+        This function allows the parse_response method to have the custom_fields
+        on the root of the object, if the custom_field is mapped to the root of the schema.
+        """
+        custom_fields = record.get("custom_fields", [])
+        new_custom_fields_list = []
+        for c_f in custom_fields:
+            if c_f["api_name"] in self.custom_fields_list:
+                record[c_f["api_name"]] = c_f["value"]
+            else:
+                new_custom_fields_list.append(c_f)
+        record["custom_fields"] = new_custom_fields_list
+        return record
+
     def parse_response(self, response: requests.Response) -> Iterable[dict]:
         """Parse the response and return an iterator of result records.
 
@@ -179,12 +214,16 @@ class ZohoInventoryStream(RESTStream):
                     url = self.url_base + "/" + lookup_name + f"/{record[id_field]}"
                     response_obj = decorated_request(self.prepare_request_lines(url,{}), {})
                     detailed_record = list(extract_jsonpath(self.records_jsonpath, input=response_obj.json()))[0]
+                    detailed_record = self.move_custom_fields_to_root(detailed_record)
                     yield detailed_record
                 except:
                     self.logger.info(f"Could not get lines for {self.name} with record {record}")
+                    record = self.move_custom_fields_to_root(record)
                     yield record
         else:
-            yield from extract_jsonpath(self.records_jsonpath, input=response.json())
+            for record in extract_jsonpath(self.records_jsonpath, input=response.json()):
+                record = self.move_custom_fields_to_root(record)
+                yield record
 
 
     def post_process(
@@ -212,7 +251,7 @@ class ZohoInventoryStream(RESTStream):
                 if obj[key] == val:
                     obj[key] = replacement
 
-    def prepare_request_lines(self, url, params) -> requests.PreparedRequest:
+    def prepare_request_lines(self, url, params=None) -> requests.PreparedRequest:
         http_method = self.rest_method
         headers = self.http_headers
         authenticator = self.authenticator
