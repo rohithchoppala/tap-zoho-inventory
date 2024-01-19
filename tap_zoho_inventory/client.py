@@ -45,7 +45,9 @@ class ZohoInventoryStream(RESTStream):
             custom_fields = self._get_custom_fields()
             for c_f in custom_fields.get(self.custom_fields_key, []):
                 self.custom_fields_list.append(c_f["api_name"])
-                self.schema["properties"][c_f["api_name"]] = {"type": ["object", "null"]}
+                self.schema["properties"][c_f["api_name"]] = {
+                    "type": list(set([c_f["data_type"], "string", "object", "null"])) # set => list approach to remove duplicates
+                }
 
             self._schema = self.schema
 
