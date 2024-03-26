@@ -1,0 +1,241 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties": {
+      "composite_item_id": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "name": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "unit": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "tax_id": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "description": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "tax_name": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "tax_percentage": {
+        "type": [
+          "null",
+          "number"
+        ]
+      },
+      "tax_type": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "purchase_account_id": {
+        "type": [
+          "null",
+          "number"
+        ]
+      },
+      "purchase_account_name": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "account_id": {
+        "type": [
+          "null",
+          "number"
+        ]
+      },
+      "account_name": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "inventory_account_id": {
+        "type": [
+          "null",
+          "number"
+        ]
+      },
+      "inventory_account_name": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "status": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "source": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "is_combo_product": {
+        "type": [
+          "null",
+          "boolean"
+        ]
+      },
+      "item_type": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "rate": {
+        "type": [
+          "null",
+          "number"
+        ]
+      },
+      "pricebook_rate": {
+        "type": [
+          "null",
+          "number"
+        ]
+      },
+      "purchase_rate": {
+        "type": [
+          "null",
+          "number"
+        ]
+      },
+      "reorder_level": {
+        "type": [
+          "null",
+          "number"
+        ]
+      },
+      "initial_stock": {
+        "type": [
+          "null",
+          "number"
+        ]
+      },
+      "initial_stock_rate": {
+        "type": [
+          "null",
+          "number"
+        ]
+      },
+      "vendor_id": {
+        "type": [
+          "null",
+          "number"
+        ]
+      },
+      "vendor_name": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "stock_on_hand": {
+        "type": [
+          "null",
+          "number"
+        ]
+      },
+      "asset_value": {
+        "type": [
+          "null",
+          "number"
+        ]
+      },
+      "available_stock": {
+        "type": [
+          "null",
+          "number"
+        ]
+      },
+      "actual_available_stock": {
+        "type": [
+          "null",
+          "number"
+        ]
+      },
+      "sku": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "upc": {
+        "type": [
+          "null",
+          "number"
+        ]
+      },
+      "ean": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "isbn": {
+        "type": [
+          "null",
+          "number"
+        ]
+      },
+      "part_number": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "image_id": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "image_name": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "purchase_description": {
+        "type": [
+          "null",
+          "string"
+        ]
+      },
+      "last_modified_time": {
+        "type": [
+          "null",
+          "string"
+        ],
+        "format": "date-time"
+      }
+    }
+  }
