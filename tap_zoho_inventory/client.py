@@ -45,8 +45,11 @@ class ZohoInventoryStream(RESTStream):
             custom_fields = self._get_custom_fields()
             for c_f in custom_fields.get(self.custom_fields_key, []):
                 self.custom_fields_list.append(c_f["api_name"])
+                # TODO: c_f["data_type"] is not always a valid JSON Schema type.
+                # We can either map all Zoho Types to valid JSON schema types or force all custom fields to come as string
+                # Zoho Types: https://www.zoho.com/deluge/help/datatypes.html
                 self.schema["properties"][c_f["api_name"]] = {
-                    "type": list(set([c_f["data_type"], "string", "object", "null"])) # set => list approach to remove duplicates
+                    "type": list(set(["string", "object", "null"])) # set => list approach to remove duplicates
                 }
 
             self._schema = self.schema
@@ -171,7 +174,7 @@ class ZohoInventoryStream(RESTStream):
         new_custom_fields_list = []
         for c_f in custom_fields:
             if c_f["api_name"] in self.custom_fields_list:
-                record[c_f["api_name"]] = c_f["value"]
+                record[c_f["api_name"]] = str(c_f["value"])
             else:
                 new_custom_fields_list.append(c_f)
         record["custom_fields"] = new_custom_fields_list
