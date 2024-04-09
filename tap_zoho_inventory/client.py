@@ -15,6 +15,7 @@ from singer_sdk.helpers.jsonpath import extract_jsonpath
 from singer_sdk.pagination import BaseAPIPaginator  # noqa: TCH002
 from singer_sdk.streams import RESTStream
 from tap_zoho_inventory.auth import ZohoInventoryAuthenticator
+from singer_sdk.exceptions import FatalAPIError, RetriableAPIError
 
 
 if sys.version_info >= (3, 8):
@@ -33,7 +34,10 @@ class ZohoInventoryStream(RESTStream):
         # Gets all of the custom fields from the account preferences
         url = self.url_base + "/settings/preferences/"
         decorated_request = self.request_decorator(self._request)
-        response = decorated_request(self.prepare_request_lines(url=url), context={})
+        params = {}
+        if self.config.get("organization_id") is not None:
+            params['organization_id'] = self.config.get("organization_id")
+        response = decorated_request(self.prepare_request_lines(url=url,params=params), context={})
         if response.status_code == 401:
             return {}
         custom_fields = response.json()["customfields"]
@@ -217,7 +221,10 @@ class ZohoInventoryStream(RESTStream):
                 sleep(1)
                 try:
                     url = self.url_base + "/" + lookup_name + f"/{record[id_field]}"
-                    response_obj = decorated_request(self.prepare_request_lines(url,{}), {})
+                    params = {}
+                    if self.config.get("organization_id") is not None:
+                        params['organization_id'] = self.config.get("organization_id")
+                    response_obj = decorated_request(self.prepare_request_lines(url,params), {})
                     detailed_record = list(extract_jsonpath(self.records_jsonpath, input=response_obj.json()))[0]
                     detailed_record = self.move_custom_fields_to_root(detailed_record)
                     yield detailed_record
@@ -277,4 +284,14 @@ class ZohoInventoryStream(RESTStream):
 
     def validate_response(self, response):
         sleep(1.01)
-        super().validate_response(response)
+        if (
+            response.status_code in self.extra_retry_statuses
+            or 500 <= response.status_code < 600
+        ):
+            msg = self.response_error_message(response)
+            self.logger.warn(f"Status code: {response.status_code}, message: {response.text}")
+            raise RetriableAPIError(msg, response)
+        elif 400 <= response.status_code < 500:
+            self.logger.warn(f"Status code: {response.status_code}, message: {response.text}")
+            msg = self.response_error_message(response)
+            raise FatalAPIError(msg)
