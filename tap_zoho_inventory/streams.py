@@ -153,13 +153,26 @@ class PurchaseReceivesDetailStream(ZohoInventoryStream):
 class CompositeItemsStream(ZohoInventoryStream):
     name = "composite_items"
     path = "/compositeitems"
-    records_jsonpath = "$.compositeitem[*]"
+    records_jsonpath = "$.composite_items[*]"
     replication_key = "last_modified_time"
     schema_filepath = SCHEMAS_DIR / "composite_items_schema.json"
     custom_fields_key = "composite_item"
+    has_lines = False
 
     def get_child_context(self, record, context):
         """Return a child context object for a given record."""
         return {
             "composite_item_id": record["composite_item_id"],
         }
+class CompositeItemsDetailsStream(ZohoInventoryStream):
+     name = "composite_items_details"
+     path = "/compositeitems/{composite_item_id}"
+     parent_stream_type = CompositeItemsStream
+     records_jsonpath = "$.composite_item[*]"
+     schema_filepath = SCHEMAS_DIR / "composite_items_indv_schema.json"
+     custom_fields_key = "composite_item"
+
+     def parse_response(self, response):
+         for record in extract_jsonpath(self.records_jsonpath, input=response.json()):
+             record = self.move_custom_fields_to_root(record)
+             yield record    
