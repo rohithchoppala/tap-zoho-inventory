@@ -16,10 +16,11 @@ class ProductsStream(ZohoInventoryStream):
 
     name = "products"
     path = "/items"
-    records_jsonpath = "$.item[*]"
+    records_jsonpath = "$.items[*]"
     replication_key = "last_modified_time"
     schema_filepath = SCHEMAS_DIR / "items_indv_schema.json"
     custom_fields_key = "item"
+    has_lines = False
 
     def get_child_context(self, record, context):
         """Return a child context object for a given record."""
