@@ -203,7 +203,7 @@
       "isbn": {
         "type": [
           "null",
-          "number"
+          "string"
         ]
       },
       "part_number": {
