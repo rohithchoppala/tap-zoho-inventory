@@ -5,7 +5,8 @@ from __future__ import annotations
 import sys
 import requests
 import backoff
-from datetime import timedelta
+import time
+from datetime import timedelta, datetime, timezone
 from time import sleep
 from pathlib import Path
 from pendulum import parse
@@ -86,6 +87,27 @@ class ZohoInventoryStream(RESTStream):
 
         return None
 
+    def _handle_rate_limit(self, response):
+        """Handle rate limit response by extracting information and backing off appropriately."""
+        retry_after = response.headers.get('Retry-After')
+        sleep_time = 60  
+        
+        if retry_after:
+            try:
+                # First try parsing as delay-seconds (integer)
+                sleep_time = int(retry_after)
+            except ValueError:
+                try:
+                    # If not an integer, try parsing as HTTP-date using pendulum
+                    retry_date = parse(retry_after)
+                    now = datetime.now(timezone.utc)
+                    sleep_time = max(1, int((retry_date - now).total_seconds()))
+                except (ValueError, TypeError):
+                    self.logger.warning(f"Could not parse Retry-After header: {retry_after}")
+            
+        self.logger.info(f"Rate limit hit. Backing off for {sleep_time} seconds.")
+        time.sleep(sleep_time)
+        
     def backoff_wait_generator(self):
         return backoff.expo(base=3, factor=6)
 
@@ -284,6 +306,13 @@ class ZohoInventoryStream(RESTStream):
 
     def validate_response(self, response):
         sleep(1.01)
+        
+        if response.status_code == 429:
+            msg = f"Rate limit exceeded: {response.text}"
+            self.logger.warning(msg)
+            self._handle_rate_limit(response)
+            raise RetriableAPIError(msg, response)
+        
         if (
             response.status_code in self.extra_retry_statuses
             or 500 <= response.status_code < 600
