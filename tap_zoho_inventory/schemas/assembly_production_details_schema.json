@@ -1,0 +1,48 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "bundle_id": { "type": ["null", "string"] },
+      "date": { "type": ["null", "string"], "format": "date" },
+      "expected_bundle_date": { "type": ["null", "string"] },
+      "composite_item_id": { "type": ["null", "string"] },
+      "composite_item_name": { "type": ["null", "string"] },
+      "composite_item_sku": { "type": ["null", "string"] },
+      "quantity_to_bundle": { "type": ["null", "number"] },
+      "description": { "type": ["null", "string"] },
+      "reference_number": { "type": ["null", "string"] },
+      "transaction_number": { "type": ["null", "string"] },
+      "status": { "type": ["null", "string"] },
+      "total": { "type": ["null", "number"] },
+      "warehouse_id": { "type": ["null", "string"] },
+      "warehouse_name": { "type": ["null", "string"] },
+      "created_time": { "type": ["null", "string"], "format": "date-time" },
+      "last_modified_time": { "type": ["null", "string"], "format": "date-time" },
+      "created_by_id": { "type": ["null", "string"] },
+      "created_by_name": { "type": ["null", "string"] },
+      "line_items": {
+        "type": ["null", "array"],
+        "items": {
+          "type": "object",
+          "properties": {
+            "item_id": { "type": ["null", "string"] },
+            "line_item_id": { "type": ["null", "string"] },
+            "name": { "type": ["null", "string"] },
+            "description": { "type": ["null", "string"] },
+            "quantity_consumed": { "type": ["null", "number"] },
+            "total_quantity_consumed": { "type": ["null", "number"] },
+            "item_total": { "type": ["null", "number"] },
+            "rate": { "type": ["null", "number"] },
+            "unit": { "type": ["null", "string"] },
+            "account_id": { "type": ["null", "string"] },
+            "account_name": { "type": ["null", "string"] },
+            "location_id": { "type": ["null", "string"] },
+            "location_name": { "type": ["null", "string"] }
+          },
+          "required": ["item_id", "line_item_id", "name", "quantity_consumed"]
+        }
+      }
+    },
+    "required": ["bundle_id", "date", "composite_item_id", "last_modified_time"]
+  }
+  
