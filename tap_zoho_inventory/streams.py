@@ -165,7 +165,6 @@ class CompositeItemsStream(ZohoInventoryStream):
         return {
             "composite_item_id": record["composite_item_id"],
         }
-
 class CompositeItemsDetailsStream(ZohoInventoryStream):
      name = "composite_items_details"
      path = "/compositeitems/{composite_item_id}"
