@@ -18,6 +18,7 @@
       "warehouse_name": { "type": ["null", "string"] },
       "created_time": { "type": ["null", "string"], "format": "date-time" },
       "last_modified_time": { "type": ["null", "string"], "format": "date-time" },
+      "is_completed": { "type": ["null", "boolean"] },
       "created_by_id": { "type": ["null", "string"] },
       "created_by_name": { "type": ["null", "string"] }
     },

@@ -20,6 +20,7 @@
       "last_modified_time": { "type": ["null", "string"], "format": "date-time" },
       "created_by_id": { "type": ["null", "string"] },
       "created_by_name": { "type": ["null", "string"] },
+      "is_completed": { "type": ["null", "boolean"] },
       "line_items": {
         "type": ["null", "array"],
         "items": {
