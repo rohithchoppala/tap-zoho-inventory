@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "bundle_id": { "type": ["null", "string"] },
+      "date": { "type": ["null", "string"], "format": "date" },
+      "expected_bundle_date": { "type": ["null", "string"] },
+      "composite_item_id": { "type": ["null", "string"] },
+      "composite_item_name": { "type": ["null", "string"] },
+      "composite_item_sku": { "type": ["null", "string"] },
+      "quantity_to_bundle": { "type": ["null", "number"] },
+      "description": { "type": ["null", "string"] },
+      "reference_number": { "type": ["null", "string"] },
+      "transaction_number": { "type": ["null", "string"] },
+      "status": { "type": ["null", "string"] },
+      "total": { "type": ["null", "number"] },
+      "warehouse_id": { "type": ["null", "string"] },
+      "warehouse_name": { "type": ["null", "string"] },
+      "created_time": { "type": ["null", "string"], "format": "date-time" },
+      "last_modified_time": { "type": ["null", "string"], "format": "date-time" },
+      "is_completed": { "type": ["null", "boolean"] },
+      "created_by_id": { "type": ["null", "string"] },
+      "created_by_name": { "type": ["null", "string"] }
+    },
+    "required": ["bundle_id", "date", "composite_item_id", "last_modified_time"]
+  }
