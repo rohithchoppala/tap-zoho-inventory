@@ -10,7 +10,7 @@ from datetime import timedelta, datetime, timezone
 from time import sleep
 from pathlib import Path
 from pendulum import parse
-from typing import Any, Callable, Iterable, cast
+from typing import Any, Callable, Iterable, cast, Optional, Dict
 
 from singer_sdk.helpers.jsonpath import extract_jsonpath
 from singer_sdk.pagination import BaseAPIPaginator  # noqa: TCH002
@@ -324,3 +324,19 @@ class ZohoInventoryStream(RESTStream):
             self.logger.warn(f"Status code: {response.status_code}, message: {response.text}")
             msg = self.response_error_message(response)
             raise FatalAPIError(msg)
+
+    def get_records(self, context: Optional[dict]) -> Iterable[Dict[str, Any]]:
+        """Get records from the API."""
+        # Only handle assembly orders sync configuration
+        if self.name == "assembly_orders":
+            sync_assembly_orders = (
+                self.config.get("sync_assembly_orders")
+                if self.config.get("sync_assembly_orders") != None
+                else True
+            )
+            
+            if not sync_assembly_orders:
+                self.logger.info("Assembly orders sync is disabled in config. Skipping sync.")
+                return []
+
+        return super().get_records(context)
