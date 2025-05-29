@@ -10,7 +10,7 @@ from datetime import timedelta, datetime, timezone
 from time import sleep
 from pathlib import Path
 from pendulum import parse
-from typing import Any, Callable, Iterable, cast, Optional, Dict
+from typing import Any, Callable, Iterable, cast
 
 from singer_sdk.helpers.jsonpath import extract_jsonpath
 from singer_sdk.pagination import BaseAPIPaginator  # noqa: TCH002
