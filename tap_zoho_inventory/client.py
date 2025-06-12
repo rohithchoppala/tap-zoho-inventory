@@ -65,8 +65,8 @@ class ZohoInventoryStream(RESTStream):
         account_server = self.config.get(
             "accounts-server", "https://accounts.zoho.com"
         )
-        account_server = account_server.replace("accounts.", "inventory.")
-        return f"{account_server}/api/v1"
+        # account_server = account_server.replace("accounts.", "inventory.")
+        return f"{account_server}/inventory/v1"
 
     # Set this value or override `get_new_paginator`.
     next_page_token_jsonpath = "$.page_context.page"  # noqa: S105
@@ -121,7 +121,7 @@ class ZohoInventoryStream(RESTStream):
         account_server = self.config.get(
             "accounts-server", "https://accounts.zoho.com"
         )
-        auth_endpoint = f"{account_server}/oauth/v2/token"
+        auth_endpoint = f"https://accounts.zoho.com/oauth/v2/token"
         return ZohoInventoryAuthenticator.create_for_stream(self, auth_endpoint=auth_endpoint)
 
     @property
