@@ -66,7 +66,8 @@ class ZohoInventoryStream(RESTStream):
             "accounts-server", "https://accounts.zoho.com"
         )
         # account_server = account_server.replace("accounts.", "inventory.")
-        return f"{account_server}/inventory/v1"
+        url ="https://www.zohoapis.com"
+        return f"{url}/inventory/v1"
 
     # Set this value or override `get_new_paginator`.
     next_page_token_jsonpath = "$.page_context.page"  # noqa: S105
