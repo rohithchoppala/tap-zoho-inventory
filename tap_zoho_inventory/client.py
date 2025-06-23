@@ -165,12 +165,13 @@ class ZohoInventoryStream(RESTStream):
         if next_page_token:
             params["page"] = next_page_token
         if self.replication_key:
-            params["sort"] = "asc"
-            params["order_by"] = self.replication_key
+            params["sort_order"] = "A"
+            params["sort_column"] = self.replication_key
             start_date = self.get_starting_time(context)
-            start_date = start_date + timedelta(seconds=1)
             if start_date:
+                start_date = start_date + timedelta(seconds=1)
                 params[self.replication_key] = start_date.strftime('%Y-%m-%dT%H:%M:%S%z')
+        self.logger.info(f"Stream '{self.name}': Preparing request with parameters: {params}")
         return params
 
     def prepare_request_payload(
@@ -306,6 +307,7 @@ class ZohoInventoryStream(RESTStream):
         return request
 
     def validate_response(self, response):
+        self.logger.info(f"Stream '{self.name}': Request URL: {response.request.url}")
         sleep(1.01)
         
         if response.status_code == 429:
